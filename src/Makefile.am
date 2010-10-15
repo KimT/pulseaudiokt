@@ -1015,6 +1015,7 @@ modlibexec_LTLIBRARIES += \
 		module-card-restore.la \
 		module-default-device-restore.la \
 		module-always-sink.la \
+		module-proxy-sink.la \
 		module-rescue-streams.la \
 		module-intended-roles.la \
 		module-suspend-on-idle.la \
@@ -1290,6 +1291,7 @@ SYMDEF_FILES = \
 		modules/module-card-restore-symdef.h \
 		modules/module-default-device-restore-symdef.h \
 		modules/module-always-sink-symdef.h \
+		modules/module-proxy-sink-symdef.h \
 		modules/module-rescue-streams-symdef.h \
 		modules/module-intended-roles-symdef.h \
 		modules/module-suspend-on-idle-symdef.h \
@@ -1688,6 +1690,12 @@ module_always_sink_la_SOURCES = modules/module-always-sink.c
 module_always_sink_la_LDFLAGS = $(MODULE_LDFLAGS)
 module_always_sink_la_LIBADD = $(AM_LIBADD) libpulsecore-@PA_MAJORMINORMICRO@.la libpulsecommon-@PA_MAJORMINORMICRO@.la libpulse.la
 module_always_sink_la_CFLAGS = $(AM_CFLAGS)
+
+# Proxy Sink module
+module_proxy_sink_la_SOURCES = modules/module-proxy-sink.c
+module_proxy_sink_la_LDFLAGS = $(MODULE_LDFLAGS)
+module_proxy_sink_la_LIBADD = $(AM_LIBADD) libpulsecore-@PA_MAJORMINORMICRO@.la libpulsecommon-@PA_MAJORMINORMICRO@.la libpulse.la
+module_proxy_sink_la_CFLAGS = $(AM_CFLAGS)
 
 # Rescue streams module
 module_rescue_streams_la_SOURCES = modules/module-rescue-streams.c
